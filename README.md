@@ -20,7 +20,7 @@ Screenshots:
 - [x] PostCSS(Autoprefixer) > CSS
 - [x] Babili minification
 
-## Installazione
+## Usage
 
 
 #### Install packages
