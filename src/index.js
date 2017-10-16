@@ -1,9 +1,8 @@
-function play()
-			{
+import './styles/index.css'
+
+function play(){
 			document.getElementById("startButton").innerHTML = "";
 			
-
-
 			//global variables
 			var canvas = document.getElementById("myCanvas");
 			var ctx = canvas.getContext("2d");
@@ -44,10 +43,10 @@ function play()
 
 			//bricks initialization
 			var bricks = [];			//2d array to store bricks
-			for(c=0; c<brickColumnCount; c++)
+			for(var c=0; c<brickColumnCount; c++)
 			{
 			    bricks[c] = [];
-			    for(r=0; r<brickRowCount; r++)
+			    for(var r=0; r<brickRowCount; r++)
 			    {
 			        bricks[c][r] = { x: 0, y: 0, status: 1 };
 			    }
@@ -113,9 +112,9 @@ function play()
 
 			function drawBricks()
 			{
-				for(c=0; c<brickColumnCount; c++)
+				for(var c=0; c<brickColumnCount; c++)
 				{
-					for(r=0; r<brickRowCount; r++)
+					for(var r=0; r<brickRowCount; r++)
 					{
 						if(bricks[c][r].status==1)
 						{
@@ -154,9 +153,9 @@ function play()
 			//Collision Detection
 			function collisionDetection()
 			{
-				for(c=0; c<brickColumnCount; c++)
+				for(var c=0; c<brickColumnCount; c++)
 				{
-					for(r=0; r<brickRowCount; r++)
+					for(var r=0; r<brickRowCount; r++)
 					{
 						var b = bricks[c][r];
 
@@ -314,104 +313,8 @@ function play()
 				//requestAnimationFrame(draw);
 			}
 
-
-
 			setInterval(draw,10);
 			//draw();
-			}function play()
-2
-                        {
-3
-                        document.getElementById("startButton").innerHTML = "";
-4
-                        
-5
-​
-6
-​
-7
-                        //global variables
-8
-                        var canvas = document.getElementById("myCanvas");
-9
-                        var ctx = canvas.getContext("2d");
-10
-                        var x = canvas.width/2;
-11
-                        var y = canvas.height - 30;
-12
-                        var dx = 2;
-13
-                        var dy= -2;
-14
-                        var ballRadius = 10;
-15
-                        var score = 0;
-16
-                        var lives = 3;
-17
-​
-18
-​
-19
-​
-20
-                        //paddle details
-21
-                        var paddleHeight = 10;
-22
-                        var paddleWidth = 75;
-23
-                        var paddleX = (canvas.width - paddleWidth)/2;
-24
-                        var paddleY = (canvas.height - paddleHeight);
-25
-                        
-26
-​
-27
-​
-28
-                        //keypress booleans
-29
-                        var rightPressed = false;
-30
-                        var leftPressed = false;
-31
-​
-32
-​
-33
-​
-34
-                        //bricks variables
-35
-                        var brickRowCount = 3;
-36
-                        var brickColumnCount = 10;
-37
-                        var brickWidth = 35;
-38
-                        var brickHeight = 20;
-39
-                        var brickPadding = 10;
-40
-                        var brickOffsetTop = 30;
-41
-                        var brickOffsetLeft = 30;
-42
-​
-43
-​
-44
-​
-45
-                        //bricks initialization
-46
-                        var bricks = [];                        //2d array to store bricks
-47
-                        for(c=0; c<brickColumnCount; c++)
-48
-                        {
-49
-                            bricks[c] = [];
+}
+
+document.getElementById("startButton").addEventListener("click", play);
